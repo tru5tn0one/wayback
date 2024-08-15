@@ -131,7 +131,7 @@ func getWaybackURLs(domain string, noSubs bool) ([]wurl, error) {
 	}
 
 	res, err := http.Get(
-		fmt.Sprintf("http://web.archive.org/cdx/search/cdx?url=%s%s/*&output=json&collapse=urlkey", subsWildcard, domain),
+		fmt.Sprintf("http://web.archive.org/cdx/search/cdx?url=%s%s/*&output=json&collapse=urlkey&matchType=prefix", subsWildcard, domain),
 	)
 	if err != nil {
 		return []wurl{}, err
